@@ -4,18 +4,18 @@
 <head>
   <title>表单设计器kcz</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="//unpkg.com/k-form-design/lib/k-form-design.css">
+  <link rel="stylesheet" href="//unpkg.com/hy-form-design/lib/hy-form-design.css">
 </head>
 
 <body>
   <div id="app">
-    <k-form-build ref="kfb" :value="jsonData"></k-form-build>
+    <hy-form-build ref="kfb" :value="jsonData"></hy-form-build>
     <button @click="handleChange">修改数据</button>
     <button @click="handleReset">重置表单</button>
   </div>
   <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!-- <script src="https://cdn.epicjs.cn//vue.min.js"></script> -->
-  <script src="//unpkg.com/k-form-design/lib/k-form-design.umd.min.js"></script>
+  <script src="//unpkg.com/hy-form-design/lib/hy-form-design.umd.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
   <script>
     let jsonData = {
@@ -96,7 +96,7 @@
       },
       methods: {
         handleChange () {
-        // 使用k-form-design组件的form属性修改表单数据
+        // 使用hy-form-design组件的form属性修改表单数据
           this.$refs.kfb.form.setFieldsValue({
             input_1577875678405: '设置input值',
             date_1577877450971: '2019-11-12',

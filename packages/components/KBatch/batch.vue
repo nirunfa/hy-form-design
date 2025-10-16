@@ -28,7 +28,7 @@
         :slot="item.key"
         slot-scope="text, row, index"
       >
-        <KFormModelItem
+        <HyFormModelItem
           :key="item.key + '1'"
           :record="item"
           :config="config"
@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import KFormModelItem from "../KFormModelItem/KFormModelItem";
+import HyFormModelItem from "../HyFormModelItem/HyFormModelItem";
 import { pluginManager, getUUID } from "../../utils/index";
 const Button = pluginManager.getComponent("aButton").component;
 
@@ -79,7 +79,7 @@ export default {
   props: ["record", "value", "dynamicData", "config", "parentDisabled"],
 
   components: {
-    KFormModelItem,
+    HyFormModelItem,
     Button
   },
   watch: {

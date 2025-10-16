@@ -8,12 +8,12 @@
       href="https://cdn.epicjs.cn/favicon.ico"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./k-form-design.css" />
+    <link rel="stylesheet" href="./hy-form-design.css" />
   </head>
 
   <body>
     <div id="app">
-      <k-form-design
+      <hy-form-design
         :showBtnList="[
     'preview',
     'importJson',
@@ -22,10 +22,10 @@
     'reset',
   ]"
         title="表单设计器 -自定义标题"
-      ></k-form-design>
+      ></hy-form-design>
     </div>
     <script src="https://cdn.epicjs.cn/vue.min.js"></script>
-    <script src="./k-form-design.umd.min.js"></script>
+    <script src="./hy-form-design.umd.min.js"></script>
     <script>
       let jsonData = {
         list: [
@@ -71,7 +71,7 @@
             },
           };
 
-          window["k-form-design"].setFormDesignConfig({
+          window["hy-form-design"].setFormDesignConfig({
             title: "自定义字段",
             list: [
               {
@@ -101,7 +101,7 @@
           });
          
           // 添加组件
-          // window["k-form-design"].nodeSchema.addSchemas([
+          // window["hy-form-design"].nodeSchema.addSchemas([
           //   {
           //     type: "demo", // 表单类型
           //     label: "自定义组件", // 标题文字
@@ -129,7 +129,7 @@
           // ]);
 
           // // 添加分组
-          // window["k-form-design"].nodeSchema.addSchemaGroup({
+          // window["hy-form-design"].nodeSchema.addSchemaGroup({
           //   title: "自定义组件",
           //   list: ["demo"],
           // });

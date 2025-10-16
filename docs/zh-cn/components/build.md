@@ -1,4 +1,4 @@
-# k-form-build
+# hy-form-build
 ## 介绍
 表单构建组件，将表单设计器生成的json数据构建成表单
 
@@ -11,7 +11,7 @@
 ```  html
 <template>
   <div>
-    <k-form-build :value="jsonData" />
+    <hy-form-build :value="jsonData" />
   </div>
 </template>
 <script>
@@ -103,7 +103,7 @@ export default {
 ```  html
 <template>
   <div>
-    <k-form-build ref="kfb" :value="jsonData" />
+    <hy-form-build ref="kfb" :value="jsonData" />
     <button @click="handleGetData">获取数据</button>
   </div>
 </template>
@@ -206,7 +206,7 @@ export default {
 ```html
 <template>
   <div>
-    <k-form-build ref="kfb" :value="jsonData" />
+    <hy-form-build ref="kfb" :value="jsonData" />
     <button @click="handleChange">修改数据</button>
     <button @click="handleReset">重置表单</button>
   </div>
@@ -343,7 +343,7 @@ export default {
   },
   methods: {
     handleChange() {
-      // 使用k-form-design组件的form属性修改表单数据
+      // 使用hy-form-design组件的form属性修改表单数据
       this.$refs.kfb.setData({
         input_1585491903047: "信息输入",
         rate_1585491911405: 3,
@@ -379,7 +379,7 @@ export default {
 ```html
 <template>
   <div>
-    <k-form-build
+    <hy-form-build
       :defaultValue="defaultValue"
       :value="jsonData"
       ref="KFB"
@@ -487,7 +487,7 @@ export default {
 ```  html
 <template>
   <div>
-    <k-form-build @submit="submitData" :value="jsonData" />
+    <hy-form-build @submit="submitData" :value="jsonData" />
   </div>
 </template>
 <script>
@@ -556,7 +556,7 @@ export default {
 ```html
 <template>
   <div>
-    <k-form-build
+    <hy-form-build
       :value="jsonData"
       :dynamicData="dynamicData"
       ref="KFB"
@@ -657,7 +657,7 @@ export default {
 ```html
 <template>
   <div>
-    <k-form-build
+    <hy-form-build
       :value="jsonData"
       ref="KFB"
       :dynamicData="dynamicData"
@@ -754,7 +754,7 @@ export default {
 ```html
 <template>
   <div>
-    <k-form-build :value="jsonData" @change="handleChange" ref="KFB" />
+    <hy-form-build :value="jsonData" @change="handleChange" ref="KFB" />
   </div>
 </template>
 <script>
@@ -848,7 +848,7 @@ export default {
 ```html
 <template>
   <div>
-    <k-form-build
+    <hy-form-build
       :value="jsonData"
       ref="KFB"
       :config="config"

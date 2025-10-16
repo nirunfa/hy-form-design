@@ -18,7 +18,7 @@ import router from "./router/";
 // 懒加载组件
 import { useAntd } from "../packages/core/useComponents";
 import { nodeSchema } from "../packages/mini";
-import KFormDesign from "../packages/use";
+import HyFormDesign from "../packages/use";
 
 const Cmp = {
   label: "cmp",
@@ -61,9 +61,9 @@ nodeSchema.addSchemaGroup({
   list: ["demo"]
 });
 
-Vue.use(KFormDesign);
+Vue.use(HyFormDesign);
 useAntd(Vue);
-// KFormDesign.setFormBuildConfig({
+// HyFormDesign.setFormBuildConfig({
 //   dynamicData: {
 //     test: [
 //       { label: "test", value: "1" },

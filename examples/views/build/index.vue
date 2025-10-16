@@ -2,7 +2,7 @@
   <div id="app">
     <button @click="setData">set</button>
     <div v-show="show">
-      <k-form-build ref="kfb" :value="configJsonData" />
+      <hy-form-build ref="kfb" :value="configJsonData" />
     </div>
   </div>
 </template>

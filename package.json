@@ -15,11 +15,11 @@
     "工作流"
   ],
   "bugs": {
-    "url": "https://github.com/nirunfa/k-form-design/issues"
+    "url": "https://github.com/nirunfa/hy-form-design/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nirunfa/k-form-design"
+    "url": "https://github.com/nirunfa/hy-form-design"
   },
   "main": "lib/hy-form-design-mini.umd.min.js",
   "scripts": {

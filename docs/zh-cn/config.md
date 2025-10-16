@@ -1,12 +1,12 @@
 # 配置默认上传接口
-## 使用KFormDesign的setConfig函数
+## 使用HyFormDesign的setConfig函数
 
-> setConfig函数仅配置KFormDesign组件，如果需要在表单使用时动态配置，则需要配置KFormBuild组件，可以查看文档[动态修改上传组件配置](/zh-cn/components/build?id=动态修改上传组件配置)
+> setConfig函数仅配置HyFormDesign组件，如果需要在表单使用时动态配置，则需要配置HyFormBuild组件，可以查看文档[动态修改上传组件配置](/zh-cn/components/build?id=动态修改上传组件配置)
 
 ```javascript
-import KFormDesign from 'k-form-design'
+import HyFormDesign from 'hy-form-design'
 
-KFormDesign.setConfig({
+HyFormDesign.setConfig({
  uploadFile: "", // 上传文件地址
  uploadImage: "", // 上传图片地址
  uploadFileName: "", // 上传文件name
@@ -21,7 +21,7 @@ KFormDesign.setConfig({
 ## 或者单独引入设置函数
 ```javascript
 // 引入 setFormDesignConfig 函数
-import { setFormDesignConfig } from 'k-form-design'
+import { setFormDesignConfig } from 'hy-form-design'
 
 setFormDesignConfig({
  uploadFile: "", // 上传文件地址

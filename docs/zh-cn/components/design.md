@@ -1,7 +1,7 @@
-# k-form-design
+# hy-form-design
 
 ## 介绍
-表单设计器，通过拖拽或点击生成表单[预览地址](https://kform.epicjs.cn/preview.html)
+表单设计器，通过拖拽或点击生成表单[预览地址](https://HyForm.epicjs.cn/preview.html)
 
 建议将表单设计器组件放到全屏组件或页面使用，使用表格布局时，在设计界面右键可以添加行列和合并单元格
 
@@ -12,7 +12,7 @@
 ```  html
 <template>
   <div>
-    <k-form-design />
+    <hy-form-design />
   </div>
 </template>
 ```
@@ -26,7 +26,7 @@
 ```  html
 <template>
   <div>
-    <k-form-design 
+    <hy-form-design 
       title="我是修改后的标题" 
      />
   </div>
@@ -42,7 +42,7 @@
 
 ```html
 <template>
-  <k-form-design showToolbarsText :fields="['input', 'textarea']" />
+  <hy-form-design showToolbarsText :fields="['input', 'textarea']" />
 </template>
 ```
 
@@ -55,7 +55,7 @@
 ```html
 <template>
   <div>
-   <k-form-design :toolbars="['save', 'preview', 'importJson']" />
+   <hy-form-design :toolbars="['save', 'preview', 'importJson']" />
   </div>
 </template>
 ```
@@ -68,7 +68,7 @@
 ```html
 <template>
   <div>
-   <k-form-design toolbarsTop />
+   <hy-form-design toolbarsTop />
   </div>
 </template>
 ```
@@ -81,7 +81,7 @@
 ```html
 <template>
   <div>
-   <k-form-design >
+   <hy-form-design >
      <!-- 左侧操作区域插槽 start -->
       <template slot="left-action">
         <a-tooltip title="测试左侧插槽">
@@ -102,7 +102,7 @@
         </a-tooltip>
       </template>
      <!-- 右侧操作区域插槽 end -->
-    </k-form-design>
+    </hy-form-design>
   </div>
 </template>
 ```
@@ -116,7 +116,7 @@
 ```  html
 <template>
   <div>
-    <k-form-design @save="handleSave" />
+    <hy-form-design @save="handleSave" />
   </div>
 </template>
 <script>
@@ -138,7 +138,7 @@ export default {
 
 ```  html
 <template>
-  <k-form-design ref='kfd' />
+  <hy-form-design ref='kfd' />
 </template>
 <script>
 export default {

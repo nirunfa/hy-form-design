@@ -5,7 +5,7 @@
 引入方式
 
 ```javascript
-import { nodeSchema } from 'k-form-design'
+import { nodeSchema } from 'hy-form-design'
 ```
 
 ## 添加组件（addSchemas）

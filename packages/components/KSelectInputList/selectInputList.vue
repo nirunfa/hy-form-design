@@ -28,7 +28,7 @@
           >{{ column.label }}</RadioItem
         >
       </a-form-model-item>
-      <KFormModelItem
+      <HyFormModelItem
         v-for="item in column.list"
         :key="item.key + '1'"
         :record="item"
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import KFormModelItem from "../KFormModelItem/KFormModelItem";
+import HyFormModelItem from "../HyFormModelItem/HyFormModelItem";
 import { pluginManager } from "../../utils/index";
 const CheckboxItem = pluginManager.getComponent("checkboxItem").component;
 const RadioItem = pluginManager.getComponent("radioItem").component;
@@ -54,7 +54,7 @@ export default {
   props: ["record", "value", "dynamicData", "config", "parentDisabled"],
 
   components: {
-    KFormModelItem,
+    HyFormModelItem,
     CheckboxItem,
     RadioItem
   },

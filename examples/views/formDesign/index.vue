@@ -1,5 +1,5 @@
 <template>
   <div>
-    <k-form-design hideResetHint />
+    <hy-form-design hideResetHint />
   </div>
 </template>

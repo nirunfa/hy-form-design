@@ -11,14 +11,14 @@
     :centered="true"
     :dialogStyle="dialogStyle"
     :bodyStyle="bodyStyle"
-    wrapClassName="k-form-modal"
+    wrapClassName="hy-form-modal"
     :width="`${previewWidth}px`"
   >
-    <k-form-build
+    <hy-form-build
       :value="jsonData"
       @change="handleChange"
       @submit="handleSubmit"
-      ref="KFormBuild"
+      ref="HyFormBuild"
     />
     <jsonModel ref="jsonModel" />
   </a-modal>
@@ -28,10 +28,10 @@
  * author kcz
  * date 2019-11-20
  */
-import jsonModel from "../KFormDesign/module/jsonModal";
+import jsonModel from "../HyFormDesign/module/jsonModal";
 import { dialogStyle, bodyStyle } from "../../config/modal.js";
 export default {
-  name: "KFormPreview",
+  name: "HyFormPreview",
   data() {
     return {
       visible: false,
@@ -64,7 +64,7 @@ export default {
      * 手动验证获取表单数据
      */
     async handleGetData() {
-      this.$refs.KFormBuild.getData()
+      this.$refs.HyFormBuild.getData()
         .then(res => {
           console.log(res, "获取数据成功");
           this.$refs.jsonModel.jsonData = res;

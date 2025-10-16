@@ -1,9 +1,9 @@
 // 导入单个组件
-import KFormDesign from "./components/KFormDesign/index";
-// import KFormPreview from "./KFormPreview/index";
-import KFormBuild from "./components/KFormBuild/index";
-import KFormItem from "./components/KFormItem/index";
-const components = [KFormDesign, KFormBuild, KFormItem];
+import HyFormDesign from "./components/HyFormDesign/index";
+// import HyFormPreview from "./HyFormPreview/index";
+import HyFormBuild from "./components/HyFormBuild/index";
+import HyFormItem from "./components/HyFormItem/index";
+const components = [HyFormDesign, HyFormBuild, HyFormItem];
 
 const install = function(Vue) {
   // use ant组件
@@ -15,13 +15,13 @@ const install = function(Vue) {
   });
 };
 
-export { KFormDesign, KFormBuild, KFormItem };
+export { HyFormDesign, HyFormBuild, HyFormItem };
 
 // 这里默认导出全部组件
 export default {
   install,
-  KFormDesign,
-  // KFormPreview,
-  KFormBuild,
-  KFormItem
+  HyFormDesign,
+  // HyFormPreview,
+  HyFormBuild,
+  HyFormItem
 };

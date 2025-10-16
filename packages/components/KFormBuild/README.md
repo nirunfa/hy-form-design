@@ -1,4 +1,4 @@
-KFormBuild
+HyFormBuild
 ====
   构建表单
  将传入的json数组,解析成ant UI组件
@@ -8,7 +8,7 @@ KFormBuild
 
 ```vue
 <template>
-  <k-form-build :value="jsonData" />
+  <hy-form-build :value="jsonData" />
 </template>
 
 <script>

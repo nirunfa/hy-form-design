@@ -2,10 +2,10 @@
  * author kcz
  * date 2019-11-20
  */
-import KFormBuild from "./index.vue";
+import HyFormBuild from "./index.vue";
 
-KFormBuild.install = function(Vue) {
-  Vue.component(KFormBuild.name, KFormBuild);
+HyFormBuild.install = function(Vue) {
+  Vue.component(HyFormBuild.name, HyFormBuild);
 };
 
-export default KFormBuild;
+export default HyFormBuild;

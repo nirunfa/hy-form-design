@@ -2,7 +2,7 @@
  * 节点管理
  */
 import { pluginManager } from "./index";
-import { defaultSchemaList } from "../components/KFormDesign/config/formItemsConfig";
+import { defaultSchemaList } from "../components/HyFormDesign/config/formItemsConfig";
 class NodeSchema {
   schemaList = [];
   schemaGroup = [

@@ -1,6 +1,6 @@
-# k-form-build form属性
+# hy-form-build form属性
 ## 介绍
-k-form-bulild有个this.form属性,可以用来修改表单值,参照[Ant Design form](https://www.antdv.com/components/form-cn/#api)的API
+hy-form-bulild有个this.form属性,可以用来修改表单值,参照[Ant Design form](https://www.antdv.com/components/form-cn/#api)的API
 
   
 
@@ -13,7 +13,7 @@ k-form-bulild有个this.form属性,可以用来修改表单值,参照[Ant Design
 ```javascript
 <template>
   <div>
-    <k-form-build ref="kfb" :value="jsonData" />
+    <hy-form-build ref="kfb" :value="jsonData" />
     <button @click="handleChange">修改数据</button>
     <button @click="handleReset">重置表单</button>
   </div>
@@ -96,7 +96,7 @@ export default {
   },
   methods: {
     handleChange () {
-      // 使用k-form-design组件的form属性修改表单数据
+      // 使用hy-form-design组件的form属性修改表单数据
       this.$refs.kfb.form.setFieldsValue({
         input_1577875678405: '设置input值',
         date_1577877450971: '2019-11-12',

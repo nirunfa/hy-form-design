@@ -2,10 +2,10 @@
  * author kcz
  * date 2019-11-20
  */
-import KFormItem from "./index.vue";
+import HyFormItem from "./index.vue";
 
-KFormItem.install = function(Vue) {
-  Vue.component(KFormItem.name, KFormItem);
+HyFormItem.install = function(Vue) {
+  Vue.component(HyFormItem.name, HyFormItem);
 };
 
-export default KFormItem;
+export default HyFormItem;

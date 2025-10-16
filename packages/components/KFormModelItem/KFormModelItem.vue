@@ -36,7 +36,7 @@ const _ = require("lodash/object");
 const ComponentArray = pluginManager.getComponents();
 
 export default {
-  name: "KFormModelItem",
+  name: "HyFormModelItem",
   props: [
     "record",
     "domains",

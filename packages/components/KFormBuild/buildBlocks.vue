@@ -113,7 +113,7 @@
     </tr>
   </table>
 
-  <KFormItem
+  <HyFormItem
     v-else-if="!record.options.hidden"
     ref="nestedComponents"
     @handleReset="$emit('handleReset')"
@@ -131,7 +131,7 @@
  * author kcz
  * date 2019-11-20
  */
-import KFormItem from "../KFormItem/index";
+import HyFormItem from "../HyFormItem/index";
 export default {
   name: "buildBlocks",
   props: {
@@ -161,7 +161,7 @@ export default {
     }
   },
   components: {
-    KFormItem
+    HyFormItem
   },
   data() {
     return {

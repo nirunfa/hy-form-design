@@ -11,13 +11,13 @@ import { pluginManager, nodeSchema } from "./utils/index";
 import { useAntd } from "./core/useComponents";
 
 // 导入单个组件
-import KFormDesign from "./components/KFormDesign/index";
-import KFormPreview from "./components/KFormPreview/index";
-import KFormBuild from "./components/KFormBuild/index";
-import KFormItem from "./components/KFormItem/index";
+import HyFormDesign from "./components/HyFormDesign/index";
+import HyFormPreview from "./components/HyFormPreview/index";
+import HyFormBuild from "./components/HyFormBuild/index";
+import HyFormItem from "./components/HyFormItem/index";
 import { setFormDesignConfig, setFormBuildConfig } from "./mini";
 useAntd(Vue);
-const components = [KFormDesign, KFormBuild, KFormItem, KFormPreview];
+const components = [HyFormDesign, HyFormBuild, HyFormItem, HyFormPreview];
 
 const install = function(Vue) {
   // use ant组件
@@ -44,10 +44,10 @@ export default {
 
 export {
   install,
-  KFormDesign,
-  KFormBuild,
-  KFormItem,
-  KFormPreview,
+  HyFormDesign,
+  HyFormBuild,
+  HyFormItem,
+  HyFormPreview,
   setFormDesignConfig,
   setFormBuildConfig,
   pluginManager,

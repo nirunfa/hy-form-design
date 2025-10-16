@@ -84,7 +84,7 @@
             </template>
           </operatingArea>
           <!-- 操作区域 end -->
-          <k-form-component-panel
+          <hy-form-component-panel
             :class="{ 'no-toolbars-top': !toolbarsTop }"
             :data="data"
             :selectItem="selectItem"
@@ -140,12 +140,12 @@ import kHeader from "./module/header";
 import operatingArea from "./module/operatingArea";
 
 // import kFooter from "./module/footer";
-import kFormComponentPanel from "./module/formComponentPanel";
+import HyFormComponentPanel from "./module/formComponentPanel";
 import kJsonModal from "./module/jsonModal";
 import kCodeModal from "./module/codeModal";
 import collapseItem from "./module/collapseItem";
 import importJsonModal from "./module/importJsonModal";
-import previewModal from "../KFormPreview/index.vue";
+import previewModal from "../HyFormPreview/index.vue";
 import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
 import { Modal, message } from "ant-design-vue";
 import { revoke, nodeSchema } from "../../utils/index";
@@ -153,7 +153,7 @@ import formItemProperties from "./module/formItemProperties";
 import formProperties from "./module/formProperties";
 
 export default {
-  name: "KFormDesign",
+  name: "HyFormDesign",
   props: {
     title: {
       type: String,
@@ -244,7 +244,7 @@ export default {
     kCodeModal,
     importJsonModal,
     previewModal,
-    kFormComponentPanel,
+    HyFormComponentPanel,
     formItemProperties,
     formProperties
   },

@@ -10,7 +10,7 @@
 
 ![image-20200411184445453](assets/image-20200411184445453.png)
 
-最后使用k-form-build组件dynamicData属性传入动态数据
+最后使用hy-form-build组件dynamicData属性传入动态数据
 
 ![image-20200411184515856](assets/image-20200411184515856.png)
 
@@ -19,7 +19,7 @@
 ```html
 <template>
   <div>
-    <k-form-build
+    <hy-form-build
       :value="jsonData"
       :dynamicData="dynamicData"
       ref="KFB"

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <k-form-build
+    <hy-form-build
       :value="jsonData"
       :defaultValue="{ slider_1619948887083: 12, input_1619948973892: '23423' }"
       ref="KFB"

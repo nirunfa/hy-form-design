@@ -77,7 +77,7 @@ function setFormDesignConfig(config) {
 
 /**
  * @author lizhichao<meteoroc@outlook.com>
- * @description 配置k-form-build(预览时)，暂只支持dynamicData的设置
+ * @description 配置hy-form-build(预览时)，暂只支持dynamicData的设置
  * @param { object }config
  */
 function setFormBuildConfig(config) {

@@ -12,7 +12,7 @@
     </p>
 
     <a-form
-      class="a-form-box k-form-build"
+      class="a-form-box hy-form-build"
       :form="form"
       selfUpdate
       :layout="data.config.layout"

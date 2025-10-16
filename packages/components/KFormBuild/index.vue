@@ -6,7 +6,7 @@
       v-if="
         typeof value.list !== 'undefined' && typeof value.config !== 'undefined'
       "
-      class="k-form-build-9136076486841527"
+      class="hy-form-build-9136076486841527"
       :layout="value.config.layout"
       :hideRequiredMark="value.config.hideRequiredMark"
       :form="form"
@@ -40,7 +40,7 @@ import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
 import { lazyLoadTick } from "../../utils/index";
 
 export default {
-  name: "KFormBuild",
+  name: "HyFormBuild",
   data() {
     return {
       locale: zhCN,
@@ -127,11 +127,11 @@ export default {
                 if (type === "string" || type === "undefined") {
                   continue;
                 } else if (type === "object") {
-                  values[key] = `k-form-design#${type}#${JSON.stringify(
+                  values[key] = `hy-form-design#${type}#${JSON.stringify(
                     values[key]
                   )}`;
                 } else {
-                  values[key] = `k-form-design#${type}#${String(values[key])}`;
+                  values[key] = `hy-form-design#${type}#${String(values[key])}`;
                 }
               }
 
@@ -152,7 +152,7 @@ export default {
             if (this.outputString) {
               // 将非string数据还原
               for (const key in json) {
-                if (!json[key].startsWith("k-form-design#")) {
+                if (!json[key].startsWith("hy-form-design#")) {
                   continue;
                 }
                 const array = json[key].split("#");

@@ -1,12 +1,12 @@
 # 添加自定义组件
 
-可以参考[使用Demo](https://gitee.com/kcz66/k-form-design-demo)
-## ~~使用KFormDesign的setConfig函数~~v3.8.4 移除
+可以参考[使用Demo](https://gitee.com/kcz66/hy-form-design-demo)
+## ~~使用HyFormDesign的setConfig函数~~v3.8.4 移除
 
  ## 推荐使用 nodeSchema 添加自定义组件 （v3.8.7以上）
 
 ```javascript
-import { nodeSchema } from 'k-form-design'
+import { nodeSchema } from 'hy-form-design'
 
 const Cmp = {
   label: "cmp",
@@ -55,7 +55,7 @@ nodeSchema.addSchemaGroup({
 ## 引入 setFormDesignConfig 函数
 ```javascript
 
-import { setFormDesignConfig } from 'k-form-design'
+import { setFormDesignConfig } from 'hy-form-design'
 
 // 自定义组件
 let Cmp = {

@@ -2,13 +2,13 @@
 
 ### 1.git源码到本地
 
-```git clone https://gitee.com/kcz66/k-form-design.git```
+```git clone https://gitee.com/kcz66/hy-form-design.git```
 
 
 
 ### 2.将源码复制到你的项目的组件目录中
 
-一般为components目录，建立"k-form-design目录"，将以源码根目录的下三个文件夹复制进来
+一般为components目录，建立"hy-form-design目录"，将以源码根目录的下三个文件夹复制进来
 
 packages、static、styles
 
@@ -19,7 +19,7 @@ packages、static、styles
 ```
 
 ├─components
-│  └─k-form-design	// 新建k-form-design目录
+│  └─hy-form-design	// 新建hy-form-design目录
 │  │	├─packages	// 复制packages文件夹
 │  │	├─static	// 复制static文件夹
 │  │	└─styles	// 复制styles文件夹
@@ -28,9 +28,9 @@ packages、static、styles
 
 
 
-### 3. 设置项目中k-form-design需要的依赖
+### 3. 设置项目中hy-form-design需要的依赖
 
-> 这是k-form-design需要的依赖，将下面的依赖与自己的项目对比，将没有安装的依赖都安装一下
+> 这是hy-form-design需要的依赖，将下面的依赖与自己的项目对比，将没有安装的依赖都安装一下
 
 ```json
   "dependencies": {
@@ -78,7 +78,7 @@ module.exports = {
 > 在main.js中注册组件，代码如下：
 
 ```javascript
-import KFormDesign from './components/k-form-design/packages/index.js'
-import './components/k-form-design/styles/form-design.less'
-Vue.use(KFormDesign)
+import HyFormDesign from './components/hy-form-design/packages/index.js'
+import './components/hy-form-design/styles/form-design.less'
+Vue.use(HyFormDesign)
 ```

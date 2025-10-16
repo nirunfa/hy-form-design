@@ -77,7 +77,7 @@ const _ = require("lodash/object");
 const ComponentArray = pluginManager.getComponents();
 
 export default {
-  name: "KFormItem",
+  name: "HyFormItem",
   props: {
     // 表单数组
     record: {

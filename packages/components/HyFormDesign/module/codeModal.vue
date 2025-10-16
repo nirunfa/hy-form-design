@@ -33,7 +33,7 @@
 <script>
 const codeVueFront = `<template>
   <div>
-    <k-form-build
+    <hy-form-build
       :value="jsonData"
       ref="KFB"
       @submit="handleSubmit"
@@ -82,16 +82,16 @@ let codeHtmlFront = `<!DOCTYPE html>
 <head>
   <title>表单设计器kcz</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="http://unpkg.com/k-form-design/lib/k-form-design.css">
+  <link rel="stylesheet" href="http://unpkg.com/hy-form-design/lib/hy-form-design.css">
 </head>
 
 <body>
   <div class="app">
-    <k-form-build ref="KFB" @submit="handleSubmit" :value="jsonData"></k-form-build>
+    <hy-form-build ref="KFB" @submit="handleSubmit" :value="jsonData"></hy-form-build>
     <button @click="getData">提交</button>
   </div>
   <script src="https://cdn.epicjs.cn/vue.min.js"><\/script>
-  <script src="http://unpkg.com/k-form-design/lib/k-form-design.umd.min.js"><\/script>
+  <script src="http://unpkg.com/hy-form-design/lib/hy-form-design.umd.min.js"><\/script>
   <script>
     let jsonData = `;
     
