@@ -16,11 +16,23 @@
           v-if="!hideModel && isDefined(selectItem.model)"
           label="数据字段"
         >
+          <template #label>
+            数据字段
+            <a-tooltip>
+              <template slot="title">
+                表单数据存储名，用拼音或英文字母
+              </template>
+              <a-icon type="question-circle" />
+            </a-tooltip>
+          </template>
           <Input v-model="selectItem.model" placeholder="请输入" />
         </a-form-item>
         <!-- input type start -->
         <a-form-item v-if="selectItem.type === 'input'" label="输入框type">
-          <Input v-model="options.type" placeholder="请输入" />
+          <!-- <Input v-model="options.type" placeholder="请输入" /> -->
+          <Radio buttonStyle="solid" v-model="options.type">
+            <RadioButton :value="item.value" :key="key" v-for="(item,key) in inputTypeOptions">{{ item.label }}</RadioButton>
+          </Radio>
         </a-form-item>
         <!-- input type end -->
         <a-form-item
@@ -106,6 +118,7 @@
             <RadioButton :value="true">动态数据</RadioButton>
           </Radio>
 
+          <!-- 弹窗设置变量名 -->
           <Input
             v-show="options.dynamic"
             v-model="options.dynamicKey"
@@ -628,6 +641,10 @@ export default {
           value: "9pt",
           label: "小五"
         }
+      ],
+      inputTypeOptions:[
+        {value:'text','label':'文本类型'},
+        {value:'password','label':'密码类型'},
       ]
     };
   },

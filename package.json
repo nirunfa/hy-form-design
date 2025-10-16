@@ -1,32 +1,32 @@
 {
-  "name": "k-form-design",
-  "version": "3.8.20",
+  "name": "hy-form-design",
+  "version": "1.0.0",
   "private": false,
-  "description": "基于vue、ant-design-vue的表单设计器,可视化开发表单",
+  "description": "基于vue、ant-design-vue的表单设计器,可视化开发表单,n次开发定制版",
   "license": "MIT",
-  "author": "kchengz",
+  "author": "nirunfa",
   "keywords": [
     "ant-design",
     "form",
-    "k-form-design",
+    "hy-form-design",
     "表单设计器",
     "表单设计",
     "可视化",
     "工作流"
   ],
   "bugs": {
-    "url": "https://github.com/Kchengz/k-form-design/issues"
+    "url": "https://github.com/nirunfa/k-form-design/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kchengz/k-form-design"
+    "url": "https://github.com/nirunfa/k-form-design"
   },
-  "main": "lib/k-form-design-mini.umd.min.js",
+  "main": "lib/hy-form-design-mini.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name k-form-design --dest lib packages/index.js && npm run lib:mini",
-    "lib:mini": "vue-cli-service build --target lib --name k-form-design-mini --dest lib packages/mini.js --no-clean",
+    "lib": "vue-cli-service build --target lib --name hy-form-design --dest lib packages/index.js && npm run lib:mini",
+    "lib:mini": "vue-cli-service build --target lib --name hy-form-design-mini --dest lib packages/mini.js --no-clean",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue packages/",
     "lint": "vue-cli-service lint"
   },
@@ -57,6 +57,10 @@
     "less-loader": "^4.1.0",
     "prettier": "^1.18.2",
     "vue-template-compiler": "^2.6.10"
+  },
+  "resolutions": {
+    "minimatch": "^7.0.0",
+    "stylelint-config-recommended": "^12.0.0"
   },
   "eslintConfig": {
     "root": true,
