@@ -35,13 +35,16 @@
           ><InputNumber
             style="width:100%"
             :max="24"
+            :min="1"
             v-model="val.span"
-            placeholder="名称"
-        /></a-col>
+            placeholder="数字"
+          />
+        </a-col>
         <a-col :span="6"
           ><div @click="handleDelete(index)" class="option-delete-box">
-            <a-icon type="delete" /></div
-        ></a-col>
+            <a-icon type="delete" />
+          </div>
+        </a-col>
       </div>
       <a-col :span="24"><a @click="handleAddCol">添加</a></a-col>
     </a-row>

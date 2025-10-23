@@ -6,7 +6,7 @@
  * @LastEditTime: 2022-10-25 21:36:53
  -->
 <template>
-  <footer class="footer-9136076486841527">
+  <footer class="footer">
     <a target="_new_page" href="https://github.com/Kchengz/hy-form-design"
       >hy-form-design</a
     >

@@ -111,6 +111,7 @@ import { revoke } from "../../../utils/index";
 import { Divider } from "ant-design-vue";
 
 export default {
+  name: "operationArea",
   components: {
     Divider
   },

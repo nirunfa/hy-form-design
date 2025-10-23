@@ -22,6 +22,7 @@ import { pluginManager } from "../../utils/index";
 
 const TimePicker = pluginManager.getComponent("timePicker");
 export default {
+  name: "timePicker",
   // eslint-disable-next-line vue/require-prop-types
   props: ["record", "value", "parentDisabled"],
   components: { TimePicker: TimePicker.component },

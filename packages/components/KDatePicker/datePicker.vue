@@ -52,6 +52,7 @@ const RangePicker = pluginManager.getComponent("rangePicker");
 const MonthPicker = pluginManager.getComponent("monthPicker");
 
 export default {
+  name: "datePicker",
   // eslint-disable-next-line vue/require-prop-types
   props: ["record", "value", "parentDisabled"],
   components: {

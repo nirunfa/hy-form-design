@@ -11,6 +11,7 @@
       :style="{
         fontFamily: record.options.fontFamily,
         fontSize: record.options.fontSize,
+        fontWeight: record.options.fontWeight,
         color: record.options.color
       }"
       v-text="record.label"

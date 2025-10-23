@@ -1,6 +1,6 @@
 <template>
   <a-config-provider :locale="locale">
-    <div class="form-designer-container-9136076486841527" v-if="loadState">
+    <div class="hy-form-designer-container" v-if="loadState">
       <k-header v-if="showHead" :title="title" />
       <!-- 操作区域 start -->
       <operatingArea
@@ -87,6 +87,7 @@
           <hy-form-component-panel
             :class="{ 'no-toolbars-top': !toolbarsTop }"
             :data="data"
+            :typeIndex="typeIndex"
             :selectItem="selectItem"
             :noModel="noModel"
             :hideModel="hideModel"
@@ -232,7 +233,8 @@ export default {
       },
       selectItem: {
         key: ""
-      }
+      },
+      typeIndex: []
     };
   },
   components: {
@@ -275,7 +277,11 @@ export default {
   methods: {
     generateKey(list, index) {
       // 生成key值
-      const key = list[index].type + "_" + new Date().getTime();
+      //new Date().getTime()
+      const key =
+        list[index].type +
+        "_" +
+        (this.typeIndex.filter(i => i.type === list[index].type).length + 1);
       this.$set(list, index, {
         ...list[index],
         key,
@@ -285,13 +291,19 @@ export default {
         // 删除不需要的model属性
         delete list[index].model;
       }
+
+      this.typeIndex.push({ type: list[index].type });
     },
     handleListPush(item) {
       // 双击控件按钮push到list
       // 生成key值
       if (!this.selectItem.key) {
         // 在没有选择表单时，将数据push到this.data.list
-        const key = item.type + "_" + new Date().getTime();
+        //new Date().getTime()
+        const key =
+          item.type +
+          "_" +
+          (this.typeIndex.filter(i => i.type === item.type).length + 1);
         item = {
           ...item,
           key,
@@ -308,6 +320,8 @@ export default {
         delete record.component;
         this.data.list.push(record);
         this.handleSetSelectItem(record);
+
+        this.typeIndex.push({ type: item.type });
         return false;
       }
       this.$refs.KFCP.handleCopy(false, item);
@@ -366,6 +380,7 @@ export default {
           customStyle: ""
         }
       };
+      this.typeIndex.splice(0);
       this.handleSetSelectItem({ key: "" });
       message.success("已清空");
     },
@@ -498,6 +513,9 @@ export default {
     },
     handleClose() {
       this.$emit("close");
+    },
+    updateSchemaGroups(schemaGroups) {
+      this.schemaGroup.splice(0, this.schemaGroup.length, ...schemaGroups);
     }
   },
   created() {

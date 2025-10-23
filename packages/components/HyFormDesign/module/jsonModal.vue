@@ -5,7 +5,7 @@
     :visible="visible"
     @cancel="handleCancel"
     :destroyOnClose="true"
-    wrapClassName="code-modal-9136076486841527"
+    wrapClassName="hy-code-modal"
     style="top:20px;"
     width="850px"
   >

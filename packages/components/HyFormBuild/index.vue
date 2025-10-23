@@ -6,7 +6,7 @@
       v-if="
         typeof value.list !== 'undefined' && typeof value.config !== 'undefined'
       "
-      class="hy-form-build-9136076486841527"
+      class="hy-form-build"
       :layout="value.config.layout"
       :hideRequiredMark="value.config.hideRequiredMark"
       :form="form"

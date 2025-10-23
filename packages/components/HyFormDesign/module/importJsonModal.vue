@@ -6,12 +6,12 @@
     @cancel="handleCancel"
     cancelText="关闭"
     :destroyOnClose="true"
-    wrapClassName="code-modal-9136076486841527"
+    wrapClassName="hy-code-modal"
     style="top:20px;"
     width="850px"
   >
     <p class="hint-box">导入格式如下:</p>
-    <div class="json-box-9136076486841527">
+    <div class="json-box">
       <Codemirror
         style="height:100%;"
         ref="myEditor"

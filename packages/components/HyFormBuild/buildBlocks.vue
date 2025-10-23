@@ -79,7 +79,7 @@
   <!-- 表格布局 -->
   <table
     v-else-if="record.type === 'table'"
-    class="kk-table-9136076486841527"
+    class="kk-table"
     :class="{
       bright: record.options.bright,
       small: record.options.small,

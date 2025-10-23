@@ -123,6 +123,11 @@ export default {
       type: Object,
       required: true
     },
+    typeIndex: {
+      type: Array,
+      required: true,
+      default: () => []
+    },
     selectItem: {
       type: Object,
       default: () => {}
@@ -150,7 +155,12 @@ export default {
     handleColAdd(evt, columns, isCopy = false) {
       // 重置或者生成key值
       const newIndex = evt.newIndex;
-      const key = columns[newIndex].type + "_" + new Date().getTime();
+      //new Date().getTime()
+      const key =
+        columns[newIndex].type +
+        "_" +
+        (this.typeIndex.filter(i => i.type === columns[newIndex].type).length +
+          1);
       if (columns[newIndex].key === "" || isCopy) {
         this.$set(columns, newIndex, {
           ...columns[newIndex],
@@ -195,6 +205,8 @@ export default {
             });
           });
         }
+
+        this.typeIndex.push({ type: columns[newIndex].type });
       }
       // 深拷贝数据
       const listString = JSON.stringify(columns[newIndex]);

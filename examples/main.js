@@ -5,8 +5,9 @@
  * @LastEditors: kcz
  * @LastEditTime: 2022-10-26 23:28:19
  */
-// 引入@babel/polyfill处理兼容
-import "@babel/polyfill";
+// 引入core-js regenerator-runtime/runtime处理兼容
+import "core-js";
+import "regenerator-runtime/runtime";
 
 import Vue from "vue";
 import App from "./App.vue";

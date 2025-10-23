@@ -587,7 +587,8 @@ export const defaultSchemaList = [
       noFormItem: true,
       color: "rgba(0, 0, 0, 0.9)",
       fontFamily: "",
-      fontSize: "10.5pt"
+      fontSize: "10.5pt",
+      fontWeight: "normal"
     },
     key: ""
   },

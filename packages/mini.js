@@ -90,6 +90,41 @@ function setFormBuildConfig(config) {
   }
 }
 
+// 导入单个组件
+import HyFormDesign from "./components/HyFormDesign/index";
+import HyFormPreview from "./components/HyFormPreview/index";
+import HyFormBuild from "./components/HyFormBuild/index";
+import HyFormItem from "./components/HyFormItem/index";
+
+const components = [HyFormDesign, HyFormBuild, HyFormItem, HyFormPreview];
+
+const install = function(Vue) {
+  // use ant组件
+  if (install.installed) return;
+  install.installed = true;
+
+  components.map(component => {
+    Vue.component(component.name, component);
+  });
+};
+
+if (typeof window !== "undefined" && window.Vue) {
+  install(window.Vue);
+}
+
+// 这里默认导入全部组件
+export default {
+  install,
+  setConfig: setFormDesignConfig,
+  setFormDesignConfig: setFormDesignConfig,
+  setFormBuildConfig: setFormBuildConfig,
+  pluginManager,
+  revoke,
+  nodeSchema,
+  lazyLoadTick,
+  ...components
+};
+
 // 这里可以用es6的解构语法导入组件
 export {
   setFormDesignConfig,
@@ -97,5 +132,9 @@ export {
   pluginManager,
   revoke,
   nodeSchema,
-  lazyLoadTick
+  lazyLoadTick,
+  HyFormDesign,
+  HyFormBuild,
+  HyFormPreview,
+  HyFormItem
 };

@@ -44,6 +44,7 @@
  */
 import HyFormItem from "../../HyFormItem/index";
 export default {
+  name: "formNode",
   props: {
     record: {
       type: Object,

@@ -500,18 +500,8 @@
 import draggable from "vuedraggable";
 import formNode from "./formNode";
 import { pluginManager } from "../../../utils/index";
-
-let CheckboxItem = null;
-let RadioItem = null;
-try {
-  CheckboxItem = pluginManager.getComponent("checkboxItem").component;
-  RadioItem = pluginManager.getComponent("radioItem").component;
-} catch (e) {
-  CheckboxItem = pluginManager.pluginManager.getComponent("checkboxItem")
-    .component;
-  RadioItem = pluginManager.pluginManager.getComponent("radioItem").component;
-}
-
+const CheckboxItem = pluginManager.getComponent("checkboxItem").component;
+const RadioItem = pluginManager.getComponent("radioItem").component;
 export default {
   name: "layoutItem",
   props: {

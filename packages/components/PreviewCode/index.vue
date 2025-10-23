@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="json-box-9136076486841527">
+    <div class="json-box">
       <Codemirror
         style="height:100%;"
         ref="myEditor"
         :value="editorJson"
       ></Codemirror>
     </div>
-    <div class="copy-btn-box-9136076486841527">
+    <div class="hy-copy-btn-box">
       <Button
         @click="handleCopyJson"
         type="primary"

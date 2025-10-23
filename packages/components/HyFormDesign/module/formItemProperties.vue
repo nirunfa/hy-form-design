@@ -10,6 +10,11 @@
       <a-form v-show="selectItem.key !== ''">
         <a-form-item v-if="isDefined(selectItem.label)" label="标签">
           <Input v-model="selectItem.label" placeholder="请输入" />
+          <kCheckbox
+            v-if="isDefined(options.showLabel)"
+            v-model="options.showLabel"
+            label="显示标签"
+          />
         </a-form-item>
 
         <a-form-item
@@ -31,7 +36,12 @@
         <a-form-item v-if="selectItem.type === 'input'" label="输入框type">
           <!-- <Input v-model="options.type" placeholder="请输入" /> -->
           <Radio buttonStyle="solid" v-model="options.type">
-            <RadioButton :value="item.value" :key="key" v-for="(item,key) in inputTypeOptions">{{ item.label }}</RadioButton>
+            <RadioButton
+              :value="item.value"
+              :key="key"
+              v-for="(item, key) in inputTypeOptions"
+              >{{ item.label }}</RadioButton
+            >
           </Radio>
         </a-form-item>
         <!-- input type end -->
@@ -136,13 +146,16 @@
           <KChangeOption v-model="selectItem.columns" type="tab" />
         </a-form-item>
         <!-- tabs配置 end -->
-        <a-form-item v-if="selectItem.type === 'grid'" label="栅格间距">
+        <a-form-item v-if="selectItem.type === 'grid'" label="栅格列间距">
           <InputNumber
             v-model="selectItem.options.gutter"
             placeholder="请输入"
           />
         </a-form-item>
         <a-form-item v-if="selectItem.type === 'grid'" label="列配置项">
+          <template #label>
+            列配置项
+          </template>
           <KChangeOption v-model="selectItem.columns" type="colspan" />
         </a-form-item>
 
@@ -366,16 +379,25 @@
         </a-form-item>
         <!-- 文字字体 -->
         <a-form-item v-if="selectItem.type === 'text'" label="字体属性设置">
-          <ColorPicker v-model="options.color" />
+          <ColorPicker
+            v-model="options.color"
+            style="width:45%;margin-left:2%;vertical-align:bottom;"
+          />
           <Select
             :options="familyOptions"
             v-model="options.fontFamily"
-            style="width:36%;margin-left:2%;vertical-align:bottom;"
+            style="width:45%;margin-left:2%;vertical-align:bottom;"
           />
           <Select
             :options="sizeOptions"
             v-model="options.fontSize"
-            style="width:35%;margin-left:2%;vertical-align:bottom;"
+            style="width:45%;margin-left:2%;vertical-align:bottom;"
+          />
+          <Select
+            placeholder="是否加粗"
+            :options="weightOptions"
+            v-model="options.fontWeight"
+            style="width:45%;margin-left:2%;vertical-align:bottom;"
           />
         </a-form-item>
         <a-form-item v-if="selectItem.type === 'text'" label="操作属性">
@@ -443,11 +465,6 @@
             label="显示输入框"
           />
           <kCheckbox
-            v-if="isDefined(options.showLabel)"
-            v-model="options.showLabel"
-            label="显示Label"
-          />
-          <kCheckbox
             v-if="isDefined(options.chinesization)"
             v-model="options.chinesization"
             label="汉化"
@@ -507,7 +524,9 @@
         </a-form-item>
 
         <a-form-item v-if="selectItem.type === 'table'" label="提示">
-          <p style="line-height: 26px">请点击右键增加行列，或者合并单元格</p>
+          <p style="line-height: 26px;text-decoration: underline;">
+            请点击右键增加行列，或者合并单元格
+          </p>
         </a-form-item>
 
         <a-form-item v-if="isDefined(selectItem.help)" label="帮助信息">
@@ -642,9 +661,22 @@ export default {
           label: "小五"
         }
       ],
-      inputTypeOptions:[
-        {value:'text','label':'文本类型'},
-        {value:'password','label':'密码类型'},
+      weightOptions: [
+        { label: "不加粗", value: "normal" },
+        { label: "加粗", value: "bold" },
+        { label: "200", value: "200" },
+        { label: "300", value: "300" },
+        { label: "400", value: "400" },
+        { label: "500", value: "500" },
+        { label: "600", value: "600" },
+        { label: "700", value: "700" },
+        { label: "800", value: "800" },
+        { label: "900", value: "900" },
+        { label: "1000", value: "1000" }
+      ],
+      inputTypeOptions: [
+        { value: "text", label: "文本类型" },
+        { value: "password", label: "密码类型" }
       ]
     };
   },

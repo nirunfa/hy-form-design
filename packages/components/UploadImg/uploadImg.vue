@@ -6,10 +6,7 @@
  * @LastEditTime: 2022-10-26 21:14:16
  -->
 <template>
-  <div
-    :style="{ width: record.options.width }"
-    class="upload-img-box-9136076486841527"
-  >
+  <div :style="{ width: record.options.width }" class="hy-upload-img-box">
     <Upload
       :name="config.uploadImageName || record.options.fileName"
       :headers="config.uploadImageHeaders || record.options.headers"
