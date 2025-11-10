@@ -1,7 +1,7 @@
 <template>
   <a-config-provider :locale="locale">
     <div class="hy-form-designer-container" v-if="loadState">
-      <k-header v-if="showHead" :title="title" />
+      <hy-header v-if="showHead" :title="title" />
       <!-- 操作区域 start -->
       <operatingArea
         v-if="toolbarsTop"
@@ -88,6 +88,7 @@
             :class="{ 'no-toolbars-top': !toolbarsTop }"
             :data="data"
             :typeIndex="typeIndex"
+            :fields="fields"
             :selectItem="selectItem"
             :noModel="noModel"
             :hideModel="hideModel"
@@ -137,7 +138,7 @@
  * date 2019-11-20
  * description 表单设计器
  */
-import kHeader from "./module/header";
+import HyHeader from "./module/header";
 import operatingArea from "./module/operatingArea";
 
 // import kFooter from "./module/footer";
@@ -234,11 +235,12 @@ export default {
       selectItem: {
         key: ""
       },
-      typeIndex: []
+      typeIndex: [],
+      fields: {}
     };
   },
   components: {
-    kHeader,
+    HyHeader,
     // kFooter,
     operatingArea,
     collapseItem,
@@ -285,7 +287,8 @@ export default {
       this.$set(list, index, {
         ...list[index],
         key,
-        model: key
+        model: key,
+        id: new Date().getTime()
       });
       if (this.noModel.includes(list[index].type)) {
         // 删除不需要的model属性
@@ -307,7 +310,8 @@ export default {
         item = {
           ...item,
           key,
-          model: key
+          model: key,
+          id: new Date().getTime()
         };
         if (this.noModel.includes(item.type)) {
           // 删除不需要的model属性
@@ -321,6 +325,11 @@ export default {
         this.data.list.push(record);
         this.handleSetSelectItem(record);
 
+        this.fields[item.id] = {
+          type: item.type,
+          label: item.label,
+          key: key
+        };
         this.typeIndex.push({ type: item.type });
         return false;
       }
@@ -381,6 +390,7 @@ export default {
         }
       };
       this.typeIndex.splice(0);
+      this.fields = {};
       this.handleSetSelectItem({ key: "" });
       message.success("已清空");
     },
@@ -504,8 +514,15 @@ export default {
     },
 
     handleSave() {
+      //取设计表单的数据表单和数据字段
+      const fieldsArray = Object.values(this.fields);
+      console.warn(fieldsArray);
       // 保存函数
-      this.$emit("save", JSON.stringify(this.data));
+      this.$emit(
+        "save",
+        JSON.stringify(this.data),
+        JSON.stringify(fieldsArray)
+      );
     },
     getValue() {
       // 获取数据
@@ -518,7 +535,7 @@ export default {
       this.schemaGroup.splice(0, this.schemaGroup.length, ...schemaGroups);
     }
   },
-  created() {
+  mounted() {
     this.loadState = true;
     nodeSchema.addComputed(this.schemaGroup);
   }

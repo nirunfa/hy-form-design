@@ -128,6 +128,11 @@ export default {
       required: true,
       default: () => []
     },
+    fields: {
+      type: Object,
+      required: true,
+      default: () => {}
+    },
     selectItem: {
       type: Object,
       default: () => {}
@@ -165,7 +170,8 @@ export default {
         this.$set(columns, newIndex, {
           ...columns[newIndex],
           key,
-          model: key
+          model: key,
+          id: new Date().getTime()
         });
         if (this.noModel.includes(columns[newIndex].type)) {
           // 删除不需要的model属性
@@ -206,6 +212,11 @@ export default {
           });
         }
 
+        this.fields[columns[newIndex].id] = {
+          type: columns[newIndex].type,
+          label: columns[newIndex].label,
+          key: key
+        };
         this.typeIndex.push({ type: columns[newIndex].type });
       }
       // 深拷贝数据
@@ -299,6 +310,8 @@ export default {
             } else {
               this.handleSelectItem(array[index - 1]);
             }
+
+            this.$delete(this.fields, this.selectItem.id);
             return false;
           }
         });

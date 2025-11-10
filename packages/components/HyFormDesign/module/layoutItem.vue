@@ -44,6 +44,11 @@
               ? { display: 'flex' }
               : {}
           "
+          :labelAlign="
+            record.options.labelAlign === 'center'
+              ? ''
+              : record.options.labelAlign
+          "
         >
           <draggable
             tag="div"
@@ -117,11 +122,14 @@
               : {}
           "
           :style="
-            config.layout === 'horizontal' &&
-            config.labelLayout === 'flex' &&
-            record.options.showLabel
+            config.layout === 'horizontal' && config.labelLayout === 'flex'
               ? { display: 'flex' }
               : {}
+          "
+          :labelAlign="
+            record.options.labelAlign === 'center'
+              ? ''
+              : record.options.labelAlign
           "
         >
           <div

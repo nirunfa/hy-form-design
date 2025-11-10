@@ -10,25 +10,27 @@
       <a-form v-show="selectItem.key !== ''">
         <a-form-item v-if="isDefined(selectItem.label)" label="标签">
           <Input v-model="selectItem.label" placeholder="请输入" />
-          <kCheckbox
-            v-if="isDefined(options.showLabel)"
-            v-model="options.showLabel"
-            label="显示标签"
-          />
+          <template v-if="isDefined(options.showLabel)">
+            <kCheckbox v-model="options.showLabel" label="显示标签" />
+            <Radio buttonStyle="solid" v-model="options.labelAlign">
+              <RadioButton value="left">靠左</RadioButton>
+              <!-- <RadioButton value="center">居中</RadioButton> -->
+              <RadioButton value="right">靠右</RadioButton>
+            </Radio>
+          </template>
         </a-form-item>
 
-        <a-form-item
-          v-if="!hideModel && isDefined(selectItem.model)"
-          label="数据字段"
-        >
+        <a-form-item v-if="!hideModel && isDefined(selectItem.model)">
           <template #label>
-            数据字段
-            <a-tooltip>
-              <template slot="title">
-                表单数据存储名，用拼音或英文字母
-              </template>
-              <a-icon type="question-circle" />
-            </a-tooltip>
+            <span>数据字段</span>&nbsp;
+            <span>
+              <a-tooltip>
+                <template slot="title">
+                  组件标识，用拼音或英文字母! 区别于其他组件
+                </template>
+                <a-icon type="question-circle" :style="{ color: 'red' }" />
+              </a-tooltip>
+            </span>
           </template>
           <Input v-model="selectItem.model" placeholder="请输入" />
         </a-form-item>

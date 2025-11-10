@@ -7,6 +7,7 @@ class NodeSchema {
   schemaList = [];
   schemaGroup = [
     {
+      id: "basic",
       title: "基础组件",
       list: [
         "input",
@@ -34,6 +35,7 @@ class NodeSchema {
       ]
     },
     {
+      id: "layout",
       title: "布局组件",
       list: ["divider", "card", "tabs", "grid", "table"]
     }
@@ -46,13 +48,15 @@ class NodeSchema {
    * @returns
    */
   addSchemas(schemas) {
-    const s = schemas.map(item => {
-      // 存在component组件则添加到插件管理器中
-      item.component && pluginManager.addComponent(item.type, item.component);
-      // 删除schemas中的component属性
-      delete item.component;
-      return item;
-    });
+    const s = schemas
+      .filter(ss => this.schemaList.findIndex(sl => sl.type === ss.type) === -1)
+      .map(item => {
+        // 存在component组件则添加到插件管理器中
+        item.component && pluginManager.addComponent(item.type, item.component);
+        // 删除schemas中的component属性
+        delete item.component;
+        return item;
+      });
 
     return this.schemaList.push(...s);
   }
@@ -91,12 +95,51 @@ class NodeSchema {
   /**
    * 添加分组
    * @param {*} schemaGroupItem
+   * @param mixed id
    * @returns
    */
-  addSchemaGroup(schemaGroupItem) {
-    this.schemaGroup.push(schemaGroupItem);
+  addSchemaGroup(schemaGroupItem, id = false) {
+    if (
+      typeof schemaGroupItem?.id === "undefined" ||
+      schemaGroupItem?.id.toString().trim().length === 0
+    ) {
+      schemaGroupItem.id = id || new Date().getTime();
+    }
+
+    if (id !== false) {
+      const index = this.hasSchemaGroupById(id, false);
+      if (index === -1) {
+        id = false;
+      } else {
+        this.schemaGroup[index]["title"] = schemaGroupItem.title;
+        schemaGroupItem.list.forEach(element => {
+          if (!this.schemaGroup[index]["list"].includes(element)) {
+            this.schemaGroup[index]["list"].push(element);
+          }
+        });
+      }
+    }
+    if (id === false) {
+      this.schemaGroup.push(schemaGroupItem);
+    }
     this.designSchemaGroup.length = 0;
     this.designSchemaGroup.push(...this.getSchemaByGroup());
+  }
+
+  /**
+   * 根据 Id 判断是否存在
+   * @param {*} id
+   * @param boolean returnBool
+   * @returns boolean|numeric
+   */
+  hasSchemaGroupById(id, returnBool = true) {
+    const findIndex = this.schemaGroup.findIndex(
+      sg => sg.id.toString() === id.toString()
+    );
+    if (returnBool) {
+      return findIndex !== -1;
+    }
+    return findIndex;
   }
 
   /**

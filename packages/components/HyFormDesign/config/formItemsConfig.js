@@ -19,6 +19,7 @@ export const defaultSchemaList = [
       addonBefore: "",
       addonAfter: "",
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       disabled: false // 是否禁用，false不禁用，true禁用
     },
@@ -45,6 +46,7 @@ export const defaultSchemaList = [
       defaultValue: "",
       clearable: false,
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       disabled: false,
       placeholder: "请输入"
@@ -71,6 +73,7 @@ export const defaultSchemaList = [
       precision: null,
       step: 1, // 步长，点击加减按钮时候，加减多少
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       disabled: false, //是否禁用
       placeholder: "请输入"
@@ -96,6 +99,7 @@ export const defaultSchemaList = [
       disabled: false, // 是否禁用
       clearable: false, // 是否显示清除按钮
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       placeholder: "请选择", // 默认提示文字
       dynamicKey: "",
@@ -130,6 +134,7 @@ export const defaultSchemaList = [
     options: {
       disabled: false, //是否禁用
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       defaultValue: [],
       dynamicKey: "",
@@ -166,6 +171,7 @@ export const defaultSchemaList = [
     options: {
       disabled: false, //是否禁用
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       defaultValue: "", // 默认值
       dynamicKey: "",
@@ -207,6 +213,7 @@ export const defaultSchemaList = [
       showTime: false, // 是否显示时间选择器
       disabled: false, // 是否禁用
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       clearable: false, // 是否显示清除按钮
       placeholder: "请选择",
@@ -232,6 +239,7 @@ export const defaultSchemaList = [
       defaultValue: "", // 默认值，字符串 12:00:00
       disabled: false, // 是否禁用
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       clearable: false, // 是否显示清除按钮
       placeholder: "请选择",
@@ -256,6 +264,7 @@ export const defaultSchemaList = [
       max: 5, // 最大值
       disabled: false, // 是否禁用
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       allowHalf: false // 是否允许半选
     },
@@ -278,6 +287,7 @@ export const defaultSchemaList = [
       defaultValue: 0, // 默认值， 如果range为true的时候，则需要改成数组,如：[12,15]
       disabled: false, // 是否禁用
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       min: 0, // 最小值
       max: 100, // 最大值
@@ -304,6 +314,7 @@ export const defaultSchemaList = [
       multiple: false,
       disabled: false,
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       drag: false,
       downloadWay: "a",
@@ -334,6 +345,7 @@ export const defaultSchemaList = [
       defaultValue: "[]",
       multiple: false,
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       disabled: false,
       width: "100%",
@@ -364,6 +376,7 @@ export const defaultSchemaList = [
       defaultValue: undefined, // 默认值
       multiple: false,
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       clearable: false, // 是否显示清除按钮
       showSearch: false, // 是否显示搜索框，搜索选择的项的值，而不是文字
@@ -411,6 +424,7 @@ export const defaultSchemaList = [
     options: {
       disabled: false, //是否禁用
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       defaultValue: undefined, // 默认值
       showSearch: false, // 是否显示搜索框，搜索选择的项的值，而不是文字
@@ -534,6 +548,7 @@ export const defaultSchemaList = [
     options: {
       defaultValue: false, // 默认值 Boolean 类型
       showLabel: true,
+      labelAlign: "right", //label 对齐方式
       hidden: false, // 是否隐藏，false显示，true隐藏
       disabled: false // 是否禁用
     },

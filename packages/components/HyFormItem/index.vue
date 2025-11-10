@@ -38,10 +38,13 @@
         ? { display: 'flex' }
         : {}
     "
+    :labelAlign="
+      record.options.labelAlign === 'center' ? '' : record.options.labelAlign
+    "
   >
     <span slot="label" v-if="isShowLabel(record.options.showLabel)">
       <a-tooltip>
-        <span v-text="record.label"></span>
+        <span v-html="record.label"></span>
         <span v-if="record.help" slot="title" v-html="record.help"></span>
         <a-icon
           v-if="record.help"

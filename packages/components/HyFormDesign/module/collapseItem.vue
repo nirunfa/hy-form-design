@@ -23,10 +23,17 @@
       @dragstart="$emit('generateKey', list, index)"
       @click="$emit('handleListPush', val)"
     >
-      <svg v-if="val.icon" class="icon" aria-hidden="true">
-        <use :xlink:href="`#${val.icon}`"></use>
-      </svg>
-      {{ val.label }}
+      <template v-if="val.icon">
+        <component
+          v-if="typeof val.icon !== 'string'"
+          :is="val.icon"
+        ></component>
+        <svg v-else class="icon" aria-hidden="true">
+          <use :xlink:href="`#${val.icon}`"></use>
+        </svg>
+        &nbsp;
+      </template>
+      <div v-html="val.label" :style="val?.labelAsideStyle"></div>
     </li>
   </draggable>
 </template>
