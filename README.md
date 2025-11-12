@@ -2,10 +2,10 @@
 
 <p align="center">
   <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
+    <img src="https://img.shields.io/badge/vue-2.7.16-brightgreen.svg" alt="vue">
   </a>
   <a href="https://github.com/vueComponent/ant-design-vue">
-    <img src="https://img.shields.io/badge/Ant%20Design%20Vue-1.5.1-blue" alt="ant-design-vue">
+    <img src="https://img.shields.io/badge/Ant%20Design%20Vue-1.7.8-blue" alt="ant-design-vue">
   </a>
   <a href="https://github.com/Kchengz/hy-form-design/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
@@ -14,19 +14,13 @@
 
 ![](https://cdn.epicjs.cn/demo.gif)
 
-
-
-<b>感谢您的支持！由于已经将项目的重心转向 Vue 3 版本设计器，对于hy-form-design项目决定暂停维护更新，欢迎您使用全新的 Vue3 版本设计器[ epic-designer](https://gitee.com/kcz66/epic-designer)，以便享受到更多优化和功能！</b>
-
 ## 简介
 
+该项目是基于 [kFormDesign](https://github.com/Kchengz/k-form-design)根据公司个性化的文化需求进行了某些定制化修改调整的项目
 基于vue和ant-design-vue实现的表单设计器，样式使用less作为开发语言，主要功能是能通过简单操作来生成配置表单，生成可保存的JSON数据，并能将JSON还原成表单，使表单开发更简单更快速
 
-- [github](https://github.com/Kchengz/hy-form-design)
-- [码云](https://gitee.com/kcz66/hy-form-design)
-- [项目预览](https://HyForm.epicjs.cn/preview.html)
-- [项目文档](https://HyForm.epicjs.cn)
-- [项目文档(备用地址)](https://kchengz.github.io/hy-form-design/)
+- [github](https://github.com/nirunfa/hy-form-design)
+- [项目文档参照 kFromDesign](https://kForm.epicjs.cn)
 
 ## 特性
 - 可视化配置页面
@@ -89,14 +83,7 @@ Vue.use(HyFormDesign)
 </template>
 ```
 
-## 交流
-点击链接加入qq群聊
-
-- [【hy-form-desgin交流群：1020643215】](https://jq.qq.com/?_wv=1027&k=5BeoFAr) 
-- [【hy-form-desgin交流二群：727396923】](https://jq.qq.com/?_wv=1027&k=uYyqQPlQ)
-
 License
 ---
-[MIT](https://github.com/Kchengz/hy-form-design/blob/master/LICENSE)
-Copyright (c) 2019 Kchengz
+[MIT](https://github.com/nirunfa/hy-form-design/blob/master/LICENSE)
 
