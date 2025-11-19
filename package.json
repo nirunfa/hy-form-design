@@ -25,8 +25,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name hy-form-design --dest lib packages/index.js && npm run lib:mini",
-    "lib:mini": "vue-cli-service build --target lib --name hy-form-design-mini --dest lib packages/mini.js --no-clean",
+    "lib": "vue-cli-service build --target lib --name hy-form-design --dest lib packages/index.js && npm run lib:zip",
+    "lib:zip": "vue-cli-service build --target lib --name hy-form-design-mini --dest lib packages/mini.js --no-clean",
+    "lib:mini": "npm run lib && cp -R lib lib-mini && vue-cli-service build --target lib --name hy-form-design-mini --dest lib-mini packages/mini.js",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue packages/",
     "lint": "vue-cli-service lint"
   },

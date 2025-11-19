@@ -544,6 +544,12 @@
         <a-form-item label="后缀" v-if="isDefined(options.addonAfter)">
           <Input v-model="options.addonAfter" placeholder="请输入" />
         </a-form-item>
+
+        <component
+          v-if="selectItem.optionsComponent && selectItem.optionsComponent?.name"
+          v-model="selectItem.options[selectItem.optionsComponent?.value]"
+          :is="componentItem"
+        ></component>
       </a-form>
     </div>
   </div>
@@ -569,6 +575,8 @@ const Textarea = pluginManager.getComponent("textarea").component;
 const Select = pluginManager.getComponent("select").component;
 const ColorPicker = pluginManager.getComponent("colorPicker").component;
 const ASwitch = pluginManager.getComponent("switch").component;
+
+const ComponentArray = pluginManager.getComponents();
 
 export default {
   name: "formItemProperties",
@@ -685,7 +693,16 @@ export default {
   computed: {
     options() {
       return this.selectItem.options || {};
-    }
+    },
+    /**
+     * @description: 输出对应组件
+     * @param {*}
+     * @return {*} component
+     */
+    componentItem() {
+      console.error(this.selectItem.optionsComponent.name);
+      return ComponentArray[this.selectItem.optionsComponent?.name].component;
+    },
   },
   props: {
     selectItem: {

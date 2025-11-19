@@ -53,8 +53,10 @@ class NodeSchema {
       .map(item => {
         // 存在component组件则添加到插件管理器中
         item.component && pluginManager.addComponent(item.type, item.component);
+        item.optionsComponent && pluginManager.addComponent(item.optionsComponent.name, item.optionsComponent.component);
         // 删除schemas中的component属性
         delete item.component;
+        item.optionsComponent && delete item.optionsComponent.component;
         return item;
       });
 
