@@ -8,7 +8,25 @@ const isDev = process.env.NODE_ENV !== 'production'
 
 export default defineConfig({
   plugins: [
-    commonjs(),vue(),requirePlugin()
+    commonjs(
+      {
+        // 覆盖范围：包括项目代码和 node_modules 中的依赖
+        include: [/node_modules/, /src\/.*\.(js|vue)$/],
+        // 处理混合模块（既有 import 又有 require 的文件）
+        transformMixedEsModules: true,
+        // 支持 require.resolve() 语法
+        resolveRequireExtensions: true,
+        // 针对 Vue2 依赖的特殊配置（如 vuex、vue-router 等）
+        namedExports: {
+          // 为常见 Vue2 依赖配置命名导出映射
+          'vue': ['Vue', 'default'],
+          'vuex': ['Store', 'default'],
+          'vue-router': ['Router', 'default'],
+          // 针对你的 vc-slick 依赖配置
+          'node_modules/vc-slick/src/index.js': ['default', 'Slick']
+        }
+      }
+    ),vue(),requirePlugin()
   ],
   root: '.',
   publicDir: 'public',
@@ -32,6 +50,11 @@ export default defineConfig({
     }
   },
   build: {
+    commonjsOptions: {
+      // 强制转换所有 CommonJS 模块
+      transformMixedEsModules: true,
+      include: /node_modules/
+    },
     // 禁用 CSS 代码分割，将所有 CSS 提取到一个文件中
     cssCodeSplit: false,
     lib: {
@@ -42,6 +65,8 @@ export default defineConfig({
     },
     outDir: 'lib', // 你的输出目录
     rollupOptions: {
+      // 打包阶段再次强化 CommonJS 转换
+      plugins: [commonjs()],
       // 确保外部化处理那些你不想打包进库的依赖，例如 'vue'
       external: ['vue'],
       output: {

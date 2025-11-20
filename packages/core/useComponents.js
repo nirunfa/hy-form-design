@@ -5,22 +5,6 @@
  * 当需要更多组件依赖时，在该文件加入即可
  */
 import { pluginManager } from "../utils/index";
-import {
-  ConfigProvider,
-  Layout,
-  Card,
-  Empty,
-  Form,
-  Row,
-  Col,
-  Modal,
-  Table,
-  Tabs,
-  Icon,
-  Tooltip,
-  FormModel,
-  Collapse
-} from "ant-design-vue";
 
 pluginManager.addComponent("input", () => import("ant-design-vue/lib/input"));
 
@@ -137,18 +121,19 @@ pluginManager.addComponent(
  * @param {*} App
  */
 export function useAntd(App) {
-  App.use(ConfigProvider);
-  App.use(Tooltip);
-  App.use(Empty);
-  App.use(FormModel);
-  App.use(Collapse);
-  App.use(Layout);
-  App.use(Card);
-  App.use(Form);
-  App.use(Row);
-  App.use(Col);
-  App.use(Modal);
-  App.use(Table);
-  App.use(Tabs);
-  App.use(Icon);
+  //使用 import()方式动态导入ant-design-vue组件
+  App.use(() => import("ant-design-vue/lib/config-provider"));
+  App.use(() => import("ant-design-vue/lib/tooltip"));
+  App.use(() => import("ant-design-vue/lib/empty"));
+  App.use(() => import("ant-design-vue/lib/form-model"));
+  App.use(() => import("ant-design-vue/lib/collapse"));
+  App.use(() => import("ant-design-vue/lib/layout"));
+  App.use(() => import("ant-design-vue/lib/card"));
+  App.use(() => import("ant-design-vue/lib/form"));
+  App.use(() => import("ant-design-vue/lib/row"));
+  App.use(() => import("ant-design-vue/lib/col"));
+  App.use(() => import("ant-design-vue/lib/modal"));
+  App.use(() => import("ant-design-vue/lib/table"));
+  App.use(() => import("ant-design-vue/lib/tabs"));
+  App.use(() => import("ant-design-vue/lib/icon"));
 }
