@@ -138,21 +138,21 @@
  * date 2019-11-20
  * description 表单设计器
  */
-import HyHeader from "./module/header";
-import operatingArea from "./module/operatingArea";
+import HyHeader from "./module/header.vue";
+import operatingArea from "./module/operatingArea.vue";
 
 // import kFooter from "./module/footer";
-import HyFormComponentPanel from "./module/formComponentPanel";
-import kJsonModal from "./module/jsonModal";
-import kCodeModal from "./module/codeModal";
-import collapseItem from "./module/collapseItem";
-import importJsonModal from "./module/importJsonModal";
+import HyFormComponentPanel from "./module/formComponentPanel.vue";
+import kJsonModal from "./module/jsonModal.vue";
+import kCodeModal from "./module/codeModal.vue";
+import collapseItem from "./module/collapseItem.vue";
+import importJsonModal from "./module/importJsonModal.vue";
 import previewModal from "../HyFormPreview/index.vue";
 import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
 import { Modal, message } from "ant-design-vue";
 import { revoke, nodeSchema } from "../../utils/index";
-import formItemProperties from "./module/formItemProperties";
-import formProperties from "./module/formProperties";
+import formItemProperties from "./module/formItemProperties.vue";
+import formProperties from "./module/formProperties.vue";
 
 export default {
   name: "HyFormDesign",

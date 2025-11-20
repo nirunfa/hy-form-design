@@ -36,7 +36,7 @@ packages、static、styles
   "dependencies": {
     "clipboard": "^2.0.6",
     "moment": "^2.24.0",
-    "vue-codemirror-lite": "^1.0.4",
+    "vue-codemirror": "^1.0.4",
     "vue-quill-editor": "^3.0.6",
     "vuedraggable": "^2.23.2"
   },

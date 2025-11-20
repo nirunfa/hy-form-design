@@ -5,7 +5,10 @@ public/
 dist/
 static/
 docs/
+packages/
 vue.config.js
+vite.config.js
+vite.mini.config.js
 babel.config.js
 *.map
 *.html

@@ -129,7 +129,7 @@ let codeHtmlFront = `<!DOCTYPE html>
 
 </html>`
 /* eslint-enable */
-import previewCode from "../../PreviewCode/index";
+import previewCode from "../../PreviewCode/index.vue";
 export default {
   name: "CodeModal",
   data() {

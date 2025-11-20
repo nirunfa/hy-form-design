@@ -129,7 +129,7 @@ pluginManager.addComponent(
 );
 pluginManager.addComponent(
   "codemirror",
-  async () => (await import("vue-codemirror-lite"))["codemirror"]
+  () => import("../components/KCodeMirror/index")
 );
 
 /**

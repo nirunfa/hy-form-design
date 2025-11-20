@@ -5,6 +5,7 @@
  * @LastEditors: kcz
  * @LastEditTime: 2022-10-26 23:27:26
  */
+import Vue from "vue";
 
 // 导入样式
 import "../styles/form-design.less";
@@ -13,6 +14,11 @@ import "./core/antdStyle";
 
 // 导出本地iconfont
 import "../static/icons/iconfont";
+
+// 导入ant组件
+import { useAntd } from "./core/useComponents";
+// use ant组件
+useAntd(Vue);
 
 import { pluginManager, revoke, nodeSchema, lazyLoadTick } from "./utils/index";
 

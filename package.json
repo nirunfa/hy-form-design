@@ -21,15 +21,24 @@
     "type": "git",
     "url": "https://github.com/nirunfa/hy-form-design"
   },
-  "main": "lib/hy-form-design-mini.umd.min.js",
+  "main": "lib/hy-form-design.umd.js",
+  "module": "./lib/hy-form-design.es.js", 
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/hy-form-design.es.js", 
+      "require": "./lib/hy-form-design.umd.js",
+      "types": "./lib/types/index.d.ts"
+    }
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name hy-form-design --dest lib packages/index.js && npm run lib:zip",
-    "lib:zip": "vue-cli-service build --target lib --name hy-form-design-mini --dest lib packages/mini.js --no-clean",
-    "lib:mini": "npm run lib && cp -R lib lib-mini && vue-cli-service build --target lib --name hy-form-design-mini --dest lib-mini packages/mini.js",
+    "dev": "vite",
+    "lib": "vite build",
+    "lib:mini": "vite build --config vite.mini.config.js",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue packages/",
-    "lint": "vue-cli-service lint"
+    "lint": "vite lint",
+    "publish:mini": "node scripts/publish-mini.js",
+    "publish:mini:dry-run": "node scripts/publish-mini.js --dry-run"
   },
   "dependencies": {
     "ant-design-vue": "1.7.8",
@@ -39,16 +48,13 @@
     "moment": "^2.24.0",
     "vcolorpicker": "^1.1.0",
     "vue": "2.7.16",
-    "vue-codemirror-lite": "^1.0.4",
+    "vue-codemirror": "4",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.3",
     "vuedraggable": "^2.23.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.0.4",
-    "@vue/cli-plugin-eslint": "^4.0.4",
-    "@vue/cli-service": "^4.2.3",
-    "@vue/eslint-config-prettier": "^5.0.0",
+    "@vitejs/plugin-vue2": "^2.3.4",
     "babel-eslint": "^10.0.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "eslint": "^5.0.0",
@@ -57,6 +63,9 @@
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "prettier": "^1.18.2",
+    "vite": "4",
+    "vite-plugin-commonjs": "^0.10.4",
+    "vite-plugin-require": "^1.2.14",
     "vue-template-compiler": "2.7.16"
   },
   "resolutions": {
@@ -78,11 +87,6 @@
     },
     "parserOptions": {
       "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
     }
   },
   "browserslist": [

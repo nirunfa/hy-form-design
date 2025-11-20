@@ -28,7 +28,7 @@
  * author kcz
  * date 2019-11-20
  */
-import jsonModel from "../HyFormDesign/module/jsonModal";
+import jsonModel from "../HyFormDesign/module/jsonModal.vue";
 import { dialogStyle, bodyStyle } from "../../config/modal.js";
 export default {
   name: "HyFormPreview",

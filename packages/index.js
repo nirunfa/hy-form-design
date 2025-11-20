@@ -1,10 +1,4 @@
-import Vue from "vue";
-
-// 导入ant组件
-import { useAntd } from "./core/useComponents";
-
 import * as all from "./mini";
-useAntd(Vue);
 
 export default all.default;
 export const HyFormBuild = all.HyFormBuild;

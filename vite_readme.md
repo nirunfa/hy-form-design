@@ -1,4 +1,4 @@
-# 当前说明是vue-cli版本的(1.0.0~)， vite 版本(^2.0.0~)的看 vite_readme.md
+# 当前说明是vue-cli版本的， vite 版本的看 vite_readme.md
 # 表单设计器 hy-form-design
 
 <p align="center">
@@ -39,15 +39,27 @@
 
 
 
-## 安装
+## 安装非精简版
 
 > 安装表单设计器
 
 ```cmd
-npm i hy-form-design --save
+npm i hy-form-design@2 --save
  
 # OR
-yarn add hy-form-design
+yarn add hy-form-design@2
+```
+## 
+
+## 安装精简版
+
+> 安装表单设计器
+
+```cmd
+npm i hy-form-design-mini --save
+ 
+# OR
+yarn add hy-form-design-mini
 ```
 
 > 安装 ant-design-vue UI ，推荐 vue2 版本最新的 1.7.8版本
@@ -59,6 +71,25 @@ npm i ant-design-vue@1.7.8 --save
 yarn add ant-design-vue@1.7.8
 ```
 
+
+> 安装 ant-design-vue UI ，推荐 vue2 版本最新的 1.7.8版本
+
+```cmd
+npm i ant-design-vue@1.7.8 --save
+
+# OR
+yarn add ant-design-vue@1.7.8
+```
+
+> 安装 moment 
+
+```cmd
+npm i moment@2.24.0 --save
+
+# OR
+yarn add moment@2.24.0
+```
+
 ### 
 
 ## 引入组件
@@ -66,12 +97,9 @@ yarn add ant-design-vue@1.7.8
 ``` javascript
 // 在main.js引入
 
-// 注：useComponents 需放最上面，优先注册懒加载组件
-import { useAntd } from 'hy-form-design/packages/core/useComponents'
-import HyFormDesign from 'hy-form-design/packages/use.js'
-import 'hy-form-design/lib/hy-form-design.css'
+import HyFormDesign from 'hy-form-design/es/hy-form-design[-mini].js'
+import 'hy-form-design/hy-form-design[-mini].css'
 
-useAntd(Vue)
 Vue.use(HyFormDesign)
 ```
 

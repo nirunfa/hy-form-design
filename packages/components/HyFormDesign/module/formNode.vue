@@ -42,7 +42,7 @@
  * date 2019-11-20
  * description 通过json生成的单个表单节点
  */
-import HyFormItem from "../../HyFormItem/index";
+import HyFormItem from "../../HyFormItem/index.vue";
 export default {
   name: "formNode",
   props: {

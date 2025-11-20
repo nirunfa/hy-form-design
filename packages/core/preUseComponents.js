@@ -19,7 +19,7 @@ import KBatch from "../components/KBatch/index";
 import KSelectInputList from "../components/KSelectInputList/index";
 import KEditor from "../components/KEditor/index";
 
-import { codemirror } from "vue-codemirror-lite";
+import codemirror from "../components/KCodeMirror/index";
 import colorPicker from "vcolorpicker";
 
 pluginManager.addComponent("button", KButton);

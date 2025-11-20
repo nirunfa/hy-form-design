@@ -35,7 +35,7 @@
  * date 2019-11-20
  * description 将json数据构建成表单
  */
-import buildBlocks from "./buildBlocks";
+import buildBlocks from "./buildBlocks.vue";
 import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
 import { lazyLoadTick } from "../../utils/index";
 

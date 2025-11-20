@@ -75,7 +75,7 @@
 </template>
 <script>
 import draggable from "vuedraggable";
-import layoutItem from "./layoutItem";
+import layoutItem from "./layoutItem.vue";
 import { message } from "ant-design-vue";
 
 export default {

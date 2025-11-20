@@ -506,7 +506,7 @@
  * description 使用递归组件调用自己，生成布局结构及表单
  */
 import draggable from "vuedraggable";
-import formNode from "./formNode";
+import formNode from "./formNode.vue";
 import { pluginManager } from "../../../utils/index";
 
 let CheckboxItem = null;

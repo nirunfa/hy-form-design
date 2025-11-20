@@ -18,7 +18,7 @@
  * date 2019-11-20
  * description 生成json Modal
  */
-import previewCode from "../../PreviewCode/index";
+import previewCode from "../../PreviewCode/index.vue";
 export default {
   name: "JsonModal",
   data() {

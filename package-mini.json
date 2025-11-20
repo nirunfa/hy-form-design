@@ -1,18 +1,25 @@
 {
-    "name": "hy-form-design-mini",
-    "version": "1.0.0",
-    "private": false,
-    "description": "基于vue、ant-design-vue的表单设计器,可视化开发表单,n次开发定制版 mini版本",
-    "license": "MIT",
-    "author": "nirunfa",
-    "keywords": [
-      "ant-design",
-      "form",
-      "hy-form-design-mini",
-      "表单设计器",
-      "表单设计",
-      "可视化",
-      "工作流"
-    ],
-    "main": "lib-mini/hy-form-design-mini.umd.min.js"
+  "name": "hy-form-design-mini",
+  "version": "0.0.1",
+  "private": false,
+  "description": "基于vue、ant-design-vue的表单设计器,可视化开发表单,n次开发定制版 mini版本",
+  "license": "MIT",
+  "author": "nirunfa",
+  "keywords": [
+    "ant-design",
+    "form",
+    "hy-form-design-mini",
+    "表单设计器",
+    "表单设计",
+    "可视化",
+    "工作流"
+  ],
+  "main": "lib-mini/hy-form-design-mini.es.js",
+  "module": "./lib-mini/hy-form-design-mini.es.js",
+  "files": [
+    "lib-mini",
+    "README.md",
+    "LICENSE"
+  ]
 }
+  
