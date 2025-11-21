@@ -1,6 +1,6 @@
 {
   "name": "hy-form-design",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": false,
   "description": "基于vue、ant-design-vue的表单设计器,可视化开发表单,n次开发定制版",
   "license": "MIT",
@@ -21,14 +21,12 @@
     "type": "git",
     "url": "https://github.com/nirunfa/hy-form-design"
   },
-  "main": "lib/hy-form-design.es.js",
-  "module": "./lib/hy-form-design.es.js",
-  "types": "./lib/types/index.d.ts",
+  "main": "es/hy-form-design.js",
+  "module": "es/hy-form-design.js",
   "exports": {
     ".": {
-      "import": "./lib/hy-form-design.es.js",
-      "require": "./lib/hy-form-design.umd.js",
-      "types": "./lib/types/index.d.ts"
+      "import": "es/hy-form-design.js",
+      "require": "es/hy-form-design.js"
     }
   },
   "scripts": {
