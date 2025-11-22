@@ -1,6 +1,6 @@
 {
   "name": "hy-form-design-mini",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": false,
   "description": "基于vue、ant-design-vue的表单设计器,可视化开发表单,n次开发定制版 mini版本",
   "license": "MIT",
