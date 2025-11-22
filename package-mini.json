@@ -1,6 +1,6 @@
 {
   "name": "hy-form-design-mini",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "private": false,
   "description": "基于vue、ant-design-vue的表单设计器,可视化开发表单,n次开发定制版 mini版本",
   "license": "MIT",
@@ -18,9 +18,10 @@
   "module": "es/hy-form-design-mini.js",
   "exports": {
     ".": {
-      "import": "es/hy-form-design-mini.js",
-      "require": "es/hy-form-design-mini.js"
-    }
+      "import": "./es/hy-form-design-mini.js",
+      "require": "./es/hy-form-design-mini.js"
+    },
+    "./*":["./*"]
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

@@ -3,12 +3,35 @@ import vue from '@vitejs/plugin-vue2'
 import { resolve } from 'path'
 import requirePlugin from 'vite-plugin-require';
 import commonjs from 'vite-plugin-commonjs';
+import removeConsole from "vite-plugin-remove-console";
 
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default defineConfig({
+  esbuild: {
+    // 移除所有注释（包括/*!开头的）
+    legalComments: 'none',
+  },
   plugins: [
-    commonjs(),vue(),requirePlugin()
+    removeConsole(),
+    commonjs(),
+    vue(),
+    requirePlugin(),
+    // 处理 iconfont.js 文件，将其转换为空模块以避免构建错误
+    {
+      name: 'handle-iconfont',
+      resolveId(id) {
+        if (id.includes('iconfont.js') || id.endsWith('iconfont')) {
+          return id;
+        }
+      },
+      load(id) {
+        if (id.includes('iconfont.js') || id.endsWith('iconfont')) {
+          // 返回空模块，因为 iconfont.js 是一个浏览器端脚本，会在运行时执行
+          return '// iconfont.js is loaded at runtime';
+        }
+      }
+    }
   ],
   root: '.',
   publicDir: 'public',
@@ -29,6 +52,26 @@ export default defineConfig({
         },
         javascriptEnabled: true
       }
+    },
+    postcss: {
+      plugins: [
+        // 自定义移除IE hack的插件
+        {
+          postcssPlugin: 'remove-ie-hacks',
+          Declaration(decl) {
+            // 移除包含 \9、*、_ 等IE hack的属性
+            if (decl.value.match(/\\9|\\0|\\\\9/) || decl.prop.match(/^\*|^_/)) {
+              decl.remove();
+            }
+          },
+          Rule(rule) {
+            // 移除针对IE的选择器（如 *html、*body）
+            if (rule.selector.match(/^\*html|^\*body/)) {
+              rule.remove();
+            }
+          }
+        }
+      ]
     }
   },
   build: {
