@@ -17,8 +17,6 @@ import "../static/icons/iconfont";
 
 // 导入ant组件
 import { useAntd } from "./core/useComponents";
-// use ant组件
-useAntd(Vue);
 
 import { pluginManager, revoke, nodeSchema, lazyLoadTick } from "./utils/index";
 
@@ -108,6 +106,9 @@ const install = function(Vue) {
   // use ant组件
   if (install.installed) return;
   install.installed = true;
+
+  // 注册 ant-design-vue 组件（异步加载但同步注册）
+  useAntd(Vue);
 
   components.map(component => {
     Vue.component(component.name, component);

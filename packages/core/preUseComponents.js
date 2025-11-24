@@ -5,7 +5,7 @@
  * 当需要更多组件依赖时，在该文件加入即可
  */
 import { pluginManager } from "../utils/index";
-import "./preUseAntd";
+import { useAntd } from "./preUseAntd";
 import KButton from "../components/KButton/index";
 import KDivider from "../components/KDivider/index";
 import KHtml from "../components/KHtml/index";
@@ -36,3 +36,5 @@ pluginManager.addComponent("selectInputList", KSelectInputList);
 pluginManager.addComponent("editor", KEditor);
 pluginManager.addComponent("colorPicker", colorPicker);
 pluginManager.addComponent("codemirror", codemirror);
+
+export default useAntd;

@@ -13,7 +13,9 @@ export default defineConfig({
     legalComments: 'none',
   },
   plugins: [
-    removeConsole(),
+    removeConsole({
+      external: ['static/icons/iconfont.js']
+    }),
     commonjs(),
     vue(),
     requirePlugin(),
@@ -28,7 +30,7 @@ export default defineConfig({
       load(id) {
         if (id.includes('iconfont.js') || id.endsWith('iconfont')) {
           // 返回空模块，因为 iconfont.js 是一个浏览器端脚本，会在运行时执行
-          return '// iconfont.js is loaded at runtime';
+          return;
         }
       }
     }

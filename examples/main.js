@@ -15,7 +15,7 @@ import router from "./router/";
 // import Cmp from "./components/CustomComponent/index.vue";
 
 // 预加载组件
-// import "../packages/core/preUseComponents";
+// import useAntd from "../packages/core/preUseComponents";
 // 懒加载组件
 import { useAntd } from "../packages/core/useComponents";
 import { nodeSchema } from "../packages/mini";
@@ -63,6 +63,7 @@ nodeSchema.addSchemaGroup({
 });
 
 Vue.use(HyFormDesign);
+// 注册 ant-design-vue 组件（异步加载但同步注册）
 useAntd(Vue);
 // HyFormDesign.setFormBuildConfig({
 //   dynamicData: {
